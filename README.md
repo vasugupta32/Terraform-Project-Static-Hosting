@@ -5,9 +5,16 @@
 
 We'll be deploying a static website to an AWS S3 bucket using Terraform, and it can be achieved in a straightforward 5-step process. All tasks will be performed exclusively through Terraform, utilizing the terraform-s3 approach.
 
-As an illustration, let's say we want to host a simple resume on AWS S3!
+## Prerequisites
 
+Before starting the deployment process, ensure the following prerequisites are met:
 
+1. **AWS Account:** You should have an AWS account. If you don't have one, you can create it [here](https://aws.amazon.com/).
+
+2. **AWS CLI Configuration:** Make sure you have the AWS CLI installed and configured with the necessary access credentials. You can configure the AWS CLI using the following command:
+
+   ```bash
+   aws configure
 
 ## Step 1: Provider File
 
@@ -25,8 +32,6 @@ terraform {
 
 provider "aws" {
   # Configuration options
-  access_key = var.access_key
-  secret_key = var.secret_key
   region = var.region
 }
 ```
@@ -34,19 +39,24 @@ provider "aws" {
 ## Step 2: Variable and tfvars File
 
 Avoid hardcoding variables in the provider file. Declare variable names and their types in a variable.tf file (with optional default values). Use a terraform.tfvars file to store the variable values.
-
+> variable.tf
 ```bash
 #varible are declared here
 variable "region" {
     type = string
-    default = "us-east-1"
 }
 
 variable "s3_bucket" {
     type = string
-    default = "mystaticwebsitehostingbucket"
 }
 ```
+> terraform.tfvars
+```bash
+#values of varible are declared here
+region = "us-east-1"
+s3_bucket = "mystaticwebsitehostingbucket"
+```
+
 ## Step 3: main file
 
 Create a main.tf file containing all the resources and their configurations, such as creating an S3 bucket, changing ownership, making it publicly accessible, enabling access control, and creating S3 objects.
