@@ -1,5 +1,5 @@
 
-# AWS S3 bucket using Terraform
+# Static Website Hosting on AWS S3 bucket using Terraform
 
 ## What's on the agenda?
 
