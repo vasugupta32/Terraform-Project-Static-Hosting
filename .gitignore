@@ -7,6 +7,9 @@
 # Ignore local .terraform directories
 .terraform/
 
+# Ignore .terraform files
+.terraform.*
+
 # Ignore .tfvars files, which may contain sensitive information
 *.tfvars
 
