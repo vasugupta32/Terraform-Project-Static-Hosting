@@ -149,7 +149,12 @@ resource "aws_s3_bucket_website_configuration" "example" {
 Execute the following Terraform commands:
 ```bash
 terraform init - Initialize the Terraform backend.
-![image](https://github.com/vasugupta32/Terraform-Project-Static-Hosting/assets/51460014/d8064998-1338-4615-a1f5-98c9e6a72dbf)
+terraform plan - Preview changes that Terraform plans to make.
+terraform apply - Execute the proposed actions.
+```
+
+terraform init - Initialize the Terraform backend.
+![image](https://github.com/vasugupta32/Terraform-Project-Static-Hosting/assets/51460014/c9ef3e83-62cb-46f0-bfe1-f271d2e7f387)
 
 terraform plan - Preview changes that Terraform plans to make.
 ![image](https://github.com/vasugupta32/Terraform-Project-Static-Hosting/assets/51460014/70c9b469-b54a-496f-9ed5-e688863357b5)
@@ -158,8 +163,6 @@ terraform plan - Preview changes that Terraform plans to make.
 terraform apply - Execute the proposed actions.
 ![image](https://github.com/vasugupta32/Terraform-Project-Static-Hosting/assets/51460014/b956c172-e758-4166-ba62-e29d32b12e56)
 ![image](https://github.com/vasugupta32/Terraform-Project-Static-Hosting/assets/51460014/c2cf9312-c533-4685-ab8c-81668d24d07b)
-
-```
 ## Step 5:  All Done!
 
 Check the AWS console output, inspect the bucket with its objects, and find the website link in the properties section. Click the link to view your hosted resume.
